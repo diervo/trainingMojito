@@ -35,6 +35,7 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
         bind: function(node) {
             this.node = node;
             alert(1);
+
             /*this.getCurrentLocation({
                 context:this,
                 onSuccess: function (){
