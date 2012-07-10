@@ -1,0 +1,26 @@
+[
+    {
+        "settings": [ "master" ],
+        "specs": {
+            "master":{
+                "type": "Master"
+            },
+            "htmlframe": {
+                "type": "HTMLFrameMojit",
+                "config": {
+                    "deploy": true,
+                    "title": "MyWeather - Yahoo!",
+                    "child": {
+                        "base": "master"
+                    }
+                } 
+            }
+        }
+    },
+    {
+        "settings": [ "environment:development" ],
+        "staticHandling": {
+            "forceUpdate": true
+        }
+    }
+]
