@@ -147,6 +147,7 @@ html, body{
 .info .forecast{
     margin:15px 0;
     font-size:16px;
+    line-height:6px;
     font-variant: small-caps;
 }
 .info .forecast span{
