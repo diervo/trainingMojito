@@ -6,6 +6,7 @@ https://github.com/isaacs/npm
 
 If you want to be able to use YUIDoc (mojito docs) you will need a few python modules.
 You can install them using the following command:  
+
     $ sudo easy_install simplejson pygments Cheetah
 
 (Full Disclosure: there is a pull request to update Mojito to yuidoc.js)
