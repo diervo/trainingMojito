@@ -25,6 +25,12 @@ YUI.add('convert-temp-tests', function(Y) {
             var c = Y.Convert.toCelsius(100);
 
             A.areSame(38, c, 'error converting to Celsius');
+        },
+
+        'test Celsius to Fahrenheit': function () {
+            var c = Y.Convert.toFahrenheit(38);
+
+            A.areSame(100, c, 'error converting to Celsius');
         }
 
     }));
