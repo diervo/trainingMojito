@@ -49,6 +49,13 @@ YUI.add('Master', function(Y, NAME) {
             }
         },
         
+
+        /**
+         * Method corresponding to the 'twitter' action.
+         *
+         * @param ac {Object} The ActionContext that provides access
+         *        to the Mojito API.
+         */
         twitter: function(ac) {
 
             var query = ac.params.getFromMerged('query');

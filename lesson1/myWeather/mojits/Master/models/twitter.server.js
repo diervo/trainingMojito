@@ -13,7 +13,7 @@ YUI.add('MasterModelTwitter', function(Y, NAME) {
     /**
      * Constructor for the MasterModelFoo class.
      *
-     * @class MasterModelFoo
+     * @class MasterModelTwitter
      * @constructor
      */
     Y.mojito.models[NAME] = {

@@ -13,7 +13,7 @@ YUI.add('MasterModelWeatherYQL', function(Y, NAME) {
     /**
      * Constructor for the MasterModelFoo class.
      *
-     * @class MasterModelFoo
+     * @class MasterModelYQL
      * @constructor
      */
     Y.mojito.models[NAME] = {
