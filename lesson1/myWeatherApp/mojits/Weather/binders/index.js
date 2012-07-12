@@ -67,7 +67,6 @@ YUI.add('WeatherBinderIndex', function(Y, NAME) {
                 unit.setContent('F');
             }
         },
-
         getCurrentLocation: function (config) {
             var userSuccess = config.context === 'undefined' ? config.onSuccess : Y.bind(config.onSuccess, config.context),
                 success = Y.bind(userSuccess, this),
@@ -76,7 +75,6 @@ YUI.add('WeatherBinderIndex', function(Y, NAME) {
 
             navigator.geolocation.getCurrentPosition(success, error, options);
         },
-
         onSuccessGetLocation: function (geoPosition) {
             var coords = geoPosition.coords;
             this.mojitProxy.refreshView({

@@ -35,7 +35,7 @@ YUI.add('Weather', function(Y, NAME) {
                 yqlModel;
 
             if (geoParams.longitude && geoParams.latitude) {
-                yqlModel = ac.models.WeatherModelWeatherYQL;
+                yqlModel = ac.models.WeatherModelYQL;
                 //Call YQLModel to retrieve the Weather for that location
                 yqlModel.getData(geoParams, function (err, data) {
                     if (err) {
