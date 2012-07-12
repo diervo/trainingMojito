@@ -72,4 +72,4 @@ YUI.add('Weather', function(Y, NAME) {
         }
     };
 
-}, '0.0.1', {requires: ['mojito', 'WeatherModelWeatherYQL']});
+}, '0.0.1', {requires: ['mojito', 'WeatherModelYQL', 'WeatherModelTwitter']});
