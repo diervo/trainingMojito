@@ -30,7 +30,9 @@ YUI.add('Master', function(Y, NAME) {
          */
 
         index: function(ac) {
-            ac.assets.addBlob('<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">','top');
+            console.log(' ============= BROWSER CONTROLLER ==============');
+            Y.log(ac.context);
+            //ac.assets.addBlob('<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">','top');
             ac.assets.addCss('./index.css');
             ac.done({
                 status: 'Weather!'

@@ -62,7 +62,7 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
                 forecastSel= name + " .forecast",
                 fNode = weather.item.forecast,
                 forecast = "",i;
-                for (i=0; i<fNode.length ;i++) {
+                for (i=0; i < fNode.length ;i++) {
                     forecast+= "<p>"+ fNode[i].day +': '+ fNode[i].text+ ' <span>(H: '+fNode[i].high+' | L: '+fNode[i].low+')</span></p>';
                 }
             Y.one(placeSel).setContent(place);
