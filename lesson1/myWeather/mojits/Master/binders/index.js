@@ -39,6 +39,7 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
             if (this.loaded) {
                 this.temperature = Y.one('#temp');
                 Y.one('.toggle').on('click', Y.bind(this.toggleTemperature, this));
+                Y.one('.tweets').on('click', Y.bind(this.showTweets, this));
             } else {
                 Y.one('.getLocation').on('click', Y.bind(this.handleLocation, this));
             }
@@ -92,6 +93,25 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
             console.log(renderedView);
             this.loaded = true;
             this.bind();
+        },
+
+        showTweets: function () {
+            var city = Y.one('#placeName').get('text'),
+                params = {
+                    url: {
+                        query: city
+                }
+            };
+
+            this.mojitProxy.invoke('twitter', {params: params}, Y.bind(this.renderTweets, this) );
+        },
+
+        renderTweets: function (err, data, meta) {
+
+            this.mojitProxy.render({results: data}, 'twitter', function (err, str) {
+                Y.one('.info').append(str);
+            });
+
         }
     };
 

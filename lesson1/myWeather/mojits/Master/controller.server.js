@@ -28,7 +28,6 @@ YUI.add('Master', function(Y, NAME) {
          * @param ac {Object} The ActionContext that provides access
          *        to the Mojito API.
          */
-
         index: function(ac) {
 
             //Retrieving GET params
@@ -48,6 +47,22 @@ YUI.add('Master', function(Y, NAME) {
                 ac.done({});
             }
         },
+        
+        twitter: function(ac) {
+
+            var query = ac.params.getFromMerged('query');
+
+            ac.models.MasterModelTwitter.search(query, function (json) {
+                var results = json.results || {};
+
+                Y.log('twitter results retrieved:', 'debug', NAME);
+                Y.log(results, 'debug', NAME);
+
+                ac.done(results, 'json');
+            });
+
+        },
+
         getWeatherJSON: function(ac) {
             ac.models.MasterModelWeatherYQL.getData({geo:'data'}, function (err, data) {
                 if (err) {
