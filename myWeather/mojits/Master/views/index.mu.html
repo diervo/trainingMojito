@@ -17,7 +17,9 @@
     {{#item}}
         {{#condition}}
             <div class="rectangle">
-                <h2 id="temp">{{temp}} ºC</h2>
+                <h2 id="temp">
+                    <span class="value">{{temp}}</span> º<span class="unit">C</span>
+                </h2>
             </div>
             <div class="triangle-l"></div>
             <div class="triangle-r"></div>
@@ -29,7 +31,7 @@
                 <div class="desc">{{text}}</div>
                 <div class="forecast">
                     <p>
-                        <a class=".toggle" href="#change">Convert Temperature</a>
+                        <a class="toggle" href="#change">Convert Temperature</a>
                     </p>
                 </div>
             </div>

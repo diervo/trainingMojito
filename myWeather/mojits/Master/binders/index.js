@@ -24,6 +24,7 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
          */
         init: function(mojitProxy) {
             this.mojitProxy = mojitProxy;
+            this.loaded = false;
         },
 
         /**
@@ -34,8 +35,15 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
          */
         bind: function(node) {
             this.node = node;
-            Y.one('.getLocation').on('click', Y.bind(this.handleLocation, this));
+            
+            if (this.loaded) {
+                this.temperature = Y.one('#temp');
+                Y.one('.toggle').on('click', Y.bind(this.toggleTemperature, this));
+            } else {
+                Y.one('.getLocation').on('click', Y.bind(this.handleLocation, this));
+            }
         },
+
         handleLocation: function (e) {
             e.halt();
             this.getCurrentLocation({
@@ -44,6 +52,20 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
             });
             e.currentTarget.setContent('Loading...');
         },
+
+        toggleTemperature: function (e) {
+            var value = this.temperature.one('.value'),
+                unit = this.temperature.one('.unit');
+
+            if (unit.get('text') === 'F') {
+                value.setContent(Y.Convert.toCelsius(value.get('text')));
+                unit.setContent('C');
+            } else {
+                value.setContent(Y.Convert.toFahrenheit(value.get('text')));
+                unit.setContent('F');
+            }
+        },
+
         getCurrentLocation: function (config) {
             var userSuccess = config.context === 'undefined' ? config.onSuccess : Y.bind(config.onSuccess,config.context),
                 success = Y.bind(userSuccess,this),
@@ -52,6 +74,7 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
 
                 navigator.geolocation.getCurrentPosition(success,error,options);
         },
+
         onSuccessGetLocation: function (geoPosition) {
             var coords = geoPosition.coords;
             this.mojitProxy.refreshView({
@@ -61,12 +84,15 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
                         latitude: coords.latitude
                     }
                 }
-            });
+            }, Y.bind(this.afterRefreshView, this));
         },
-        onRefreshView: function (node, renderedView) {
+
+        afterRefreshView: function (node, renderedView) {
             console.log('View has been refreshed!');
             console.log(renderedView);
+            this.loaded = true;
+            this.bind();
         }
     };
 
-}, '0.0.1', {requires: ['mojito-client','node']});
+}, '0.0.1', {requires: ['mojito-client', 'node', 'convert-temp']});
