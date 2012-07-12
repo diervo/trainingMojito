@@ -29,13 +29,12 @@ YUI.add('WeatherModelTwitter', function(Y, NAME) {
          *        data has been retrieved.
          */
         search: function(query, callback) {
-            var api = 'http://search.twitter.com/search.json?q=';
+            var api = 'http://search.twitter.com/search.json?callback={callback}&q=';
 
-            Y.io(api + query, {
+            Y.jsonp(api + query, {
                 on: {
-                    success: function (id, e) {
-                        var json = JSON.parse(e.responseText);
-                        callback(json);
+                    success: function (response) {
+                        callback(response);
                     },
                     failure: function () {
                         Y.log('Failed to call Twitter', 'error', NAME);
@@ -47,4 +46,4 @@ YUI.add('WeatherModelTwitter', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['io-base']});
+}, '0.0.1', {requires: ['jsonp']});
