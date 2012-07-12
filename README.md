@@ -14,13 +14,14 @@ You can install them using the following command:
 ## Quick Start
 
     $ git clone git://github.com/dferreiroval/trainingMojito.git
-    $ cd trainingMojito/myWeather
+    $ cd trainingMojito/lesson1
     $ npm install mojito@0.3.26 -g
     $ mojito test app .
-    $ mojito docs app myWeather
+    $ mojito docs app lesson1
     $ mojito start --context "environment:development"
 
 ## Screencast
+Lesson 1:  
 To be uploaded.
 
 ## Help
