@@ -14,7 +14,7 @@ You can install them using the following command:
 ## Quick Start
 
     $ git clone git://github.com/dferreiroval/trainingMojito.git
-    $ cd trainingMojito/lesson1
+    $ cd trainingMojito/lesson1/myWeather
     $ npm install mojito@0.3.26 -g
     $ mojito test app .
     $ mojito docs app lesson1
