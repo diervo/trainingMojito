@@ -1,0 +1,17 @@
+# Yahoo! Mojito Training
+
+## Prerequesites
+We recommend nodejs 0.6 installed via npm.
+https://github.com/isaacs/npm
+
+## Quick Start
+
+    $ git clone git://github.com/dferreiroval/trainingMojito.git
+    $ cd trainingMojito/myWeather
+    $ npm install .
+    $ node_modules/.bin/mojito start --context "environment:development"
+
+## Screencast
+To be uploaded.
+
+
