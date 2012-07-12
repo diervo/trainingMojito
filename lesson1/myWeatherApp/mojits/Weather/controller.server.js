@@ -36,15 +36,20 @@ YUI.add('Weather', function(Y, NAME) {
 
             if (geoParams.longitude && geoParams.latitude) {
                 yqlModel = ac.models.WeatherModelWeatherYQL;
-
+                //Call YQLModel to retrieve the Weather for that location
                 yqlModel.getData(geoParams, function (err, data) {
                     if (err) {
                         ac.error(err);
                         return;
                     }
+                    //With "ac.done" we pass the data to be render
+                    //into the view: (see index.mu.html)
+                    //After the data is rendered will be shipped to the client.
                     ac.done(data);
                 });
             } else {
+                //passing an empty object to the view
+                //will make the view render partially
                 ac.done({});
             }
         },
