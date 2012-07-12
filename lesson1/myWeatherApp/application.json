@@ -19,7 +19,7 @@
                         "blob":["<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"]
                     }
                 }
-} 
+}
             }
         }
     },
@@ -27,6 +27,13 @@
         "settings": [ "environment:development" ],
         "staticHandling": {
             "forceUpdate": true
+        }
+    },
+    {
+        "settings": [ "environment:production" ],
+        "staticHandling": {
+            "//": "cache files in browser for 10 minutes",
+            "maxAge": 600000
         }
     }
 ]
