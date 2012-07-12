@@ -12,8 +12,14 @@
                     "title": "MyWeather - Yahoo!",
                     "child": {
                         "base": "master"
+                    },
+                    "assets": {
+                    "top": {
+                        "css": ["/static/Master/assets/index.css"],
+                        "blob":["<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"]
                     }
-                } 
+                }
+} 
             }
         }
     },

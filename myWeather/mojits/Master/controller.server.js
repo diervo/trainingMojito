@@ -30,9 +30,6 @@ YUI.add('Master', function(Y, NAME) {
          */
 
         index: function(ac) {
-            //adding metatag for iPhone + CSS style
-            ac.assets.addBlob('<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">','top');
-            ac.assets.addCss('./index.css');
 
             //Retrieving GET params
             var geoParams = ac.params.url();
