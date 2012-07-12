@@ -5,7 +5,7 @@ html, body{
 }
 @media (max-width:320px) {
     html,body{
-        background: url("/static/Master/assets/images/bg.jpeg") #1C6AA1;
+        background: url("/static/Weather/assets/images/bg.jpeg") #1C6AA1;
     }
 }
 a{

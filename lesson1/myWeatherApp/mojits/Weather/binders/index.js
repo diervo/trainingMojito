@@ -2,18 +2,18 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('MasterBinderIndex', function(Y, NAME) {
+YUI.add('WeatherBinderIndex', function(Y, NAME) {
 
 /**
- * The MasterBinderIndex module.
+ * The WeatherBinderIndex module.
  *
- * @module MasterBinderIndex
+ * @module WeatherBinderIndex
  */
 
     /**
-     * Constructor for the MasterBinderIndex class.
+     * Constructor for the WeatherBinderIndex class.
      *
-     * @class MasterBinderIndex
+     * @class WeatherBinderIndex
      * @constructor
      */
     Y.namespace('mojito.binders')[NAME] = {

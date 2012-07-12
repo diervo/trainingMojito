@@ -2,12 +2,12 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('Master', function(Y, NAME) {
+YUI.add('Weather', function(Y, NAME) {
 
 /**
- * The Master module.
+ * The Weather module.
  *
- * @module Master
+ * @module Weather
  */
 
     /**
@@ -35,7 +35,7 @@ YUI.add('Master', function(Y, NAME) {
                 yqlModel;
 
             if (geoParams.longitude && geoParams.latitude) {
-                yqlModel = ac.models.MasterModelWeatherYQL;
+                yqlModel = ac.models.WeatherModelWeatherYQL;
 
                 yqlModel.getData(geoParams, function (err, data) {
                     if (err) {
@@ -59,7 +59,7 @@ YUI.add('Master', function(Y, NAME) {
 
             var query = ac.params.getFromMerged('query');
 
-            ac.models.MasterModelTwitter.search(query, function (json) {
+            ac.models.WeatherModelTwitter.search(query, function (json) {
                 var results = json.results || {};
                 ac.done(results, 'json');
             });
@@ -67,4 +67,4 @@ YUI.add('Master', function(Y, NAME) {
         }
     };
 
-}, '0.0.1', {requires: ['mojito', 'MasterModelWeatherYQL']});
+}, '0.0.1', {requires: ['mojito', 'WeatherModelWeatherYQL']});

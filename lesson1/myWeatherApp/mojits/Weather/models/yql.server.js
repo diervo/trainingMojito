@@ -2,18 +2,18 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('MasterModelWeatherYQL', function(Y, NAME) {
+YUI.add('WeatherModelWeatherYQL', function(Y, NAME) {
 
 /**
- * The MasterModelFoo module.
+ * The WeatherModelFoo module.
  *
- * @module Master
+ * @module Weather
  */
 
     /**
-     * Constructor for the MasterModelFoo class.
+     * Constructor for the WeatherModelFoo class.
      *
-     * @class MasterModelYQL
+     * @class WeatherModelYQL
      * @constructor
      */
     Y.mojito.models[NAME] = {

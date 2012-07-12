@@ -3,7 +3,7 @@
         "settings": [ "master" ],
         "specs": {
             "master":{
-                "type": "Master"
+                "type": "Weather"
             },
             "htmlframe": {
                 "type": "HTMLFrameMojit",
@@ -15,7 +15,7 @@
                     },
                     "assets": {
                     "top": {
-                        "css": ["/static/Master/assets/index.css"],
+                        "css": ["/static/Weather/assets/index.css"],
                         "blob":["<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"]
                     }
                 }

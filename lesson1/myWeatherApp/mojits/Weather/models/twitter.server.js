@@ -2,18 +2,18 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('MasterModelTwitter', function(Y, NAME) {
+YUI.add('WeatherModelTwitter', function(Y, NAME) {
 
 /**
- * The MasterModelFoo module.
+ * The WeatherModelFoo module.
  *
- * @module Master
+ * @module Weather
  */
 
     /**
-     * Constructor for the MasterModelFoo class.
+     * Constructor for the WeatherModelFoo class.
      *
-     * @class MasterModelTwitter
+     * @class WeatherModelTwitter
      * @constructor
      */
     Y.mojito.models[NAME] = {
