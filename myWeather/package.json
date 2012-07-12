@@ -3,13 +3,16 @@
     "description": "A Mojito application that replaces having a window",
     "version": "0.1.0",
     "author": {
-        "name": "Don Diego Cojones",
-        "email": "diegof@yahoo-inc.com"
+        "name": "Yahoo! Inc"
     },
     "contributors": [
           {
               "name": "Frank the Tank",
               "email": "frankfa@yahoo-inc.com"
+          },
+          {
+              "name": "Don Diego Cojones",
+              "email": "diegof@yahoo-inc.com"
           }
     ],
     "dependencies": {
