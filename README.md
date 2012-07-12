@@ -18,6 +18,6 @@ To be uploaded.
 Mojito Forum: http://developer.yahoo.com/forum/Yahoo-Mojito/  
 YUI Forum: http://yuilibrary.com/forum/  
 
-Diego Ferreiro <elfogris@gmail.com> @diervo
-Fabian Frank <fabian.frank.de@gmai.com> @Fabian_Frank
+Diego Ferreiro <elfogris@gmail.com> @diervo  
+Fabian Frank <fabian.frank.de@gmai.com> @Fabian_Frank 
 
