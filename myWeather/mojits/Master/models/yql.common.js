@@ -29,12 +29,8 @@ YUI.add('MasterModelWeatherYQL', function(Y, NAME) {
          *        data has been retrieved.
          */
         getData: function(params, callback) {
-            var defaultCoords = {
-                latitude: 37.4142716,
-                longitude: -122.0243208
-            },
-            yqlTable = 'https://raw.github.com/yql/yql-tables/master/weather/weather.woeid.xml',
-            coords = defaultCoords;
+            var yqlTable = 'https://raw.github.com/yql/yql-tables/master/weather/weather.woeid.xml',
+            coords = params;
 
             var query = Y.YQL('use "'+ yqlTable +'" as weather; '+
                     'select * from weather where w in (select place.woeid from flickr.places where '+
