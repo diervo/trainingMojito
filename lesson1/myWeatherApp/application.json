@@ -14,25 +14,24 @@
                         "base": "master"
                     },
                     "assets": {
-                    "top": {
-                        "css": ["/static/Weather/assets/index.css"],
-                        "blob":["<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"]
+                        "top": {
+                            "css": ["/static/Weather/assets/index.css"],
+                            "blob":["<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"]
+                        }
                     }
                 }
-}
             }
-        }
-    },
-    {
-        "settings": [ "environment:development" ],
+        },
         "staticHandling": {
+            "cache": false,
             "forceUpdate": true
         }
     },
     {
         "settings": [ "environment:production" ],
         "staticHandling": {
-            "//": "cache files in browser for 10 minutes",
+            "cache": true,
+            "forceUpdate": false,
             "maxAge": 600000
         }
     }
