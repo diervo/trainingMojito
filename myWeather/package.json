@@ -3,7 +3,7 @@
     "description": "A Mojito application that replaces having a window",
     "version": "0.1.0",
     "author": {
-        "name": "Don Diego Cojones"
+        "name": "Don Diego Cojones",
         "email": "diegof@yahoo-inc.com"
     },
     "contributors": [
@@ -13,7 +13,7 @@
           }
     ],
     "dependencies": {
-        "mojito": ">= 0.3.26"
+        "mojito": ">= 0.3.28"
     },
     "engines": {
         "node": ">= 0.6.0"
