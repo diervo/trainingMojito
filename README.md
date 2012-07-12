@@ -1,7 +1,7 @@
 # Yahoo! Mojito Training
 
 ## Prerequesites
-We recommend nodejs 0.6 installed via npm.
+We recommend nodejs 0.6 installed via npm.  
 https://github.com/isaacs/npm
 
 ## Quick Start
