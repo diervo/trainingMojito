@@ -21,7 +21,6 @@ YUI.add('MasterModelWeatherYQL', function(Y, NAME) {
         init: function(config) {
             this.config = config;
         },
-
         /**
          * Method that will be invoked by the mojit controller to obtain data.
          *
@@ -30,18 +29,24 @@ YUI.add('MasterModelWeatherYQL', function(Y, NAME) {
          */
         getData: function(params, callback) {
             var yqlTable = 'https://raw.github.com/yql/yql-tables/master/weather/weather.woeid.xml',
-            coords = params;
+                coords = params,
+                query = 'use "{table}" as weather; select * from weather where w in (' +
+                        'select place.woeid from flickr.places where ' +
+                        'lat={lat} and lon={lon} and api_key={api}) and u="c";',
+                queryParams = {
+                    lat: coords.latitude,
+                    lon: coords.longitude,
+                    api: '07518c5da6dcda6f2d8126ca45fbf085',
+                    table: yqlTable
+                },
+                cookedQuery = Y.substitute(query, queryParams);
 
-            var query = Y.YQL('use "'+ yqlTable +'" as weather; '+
-                    'select * from weather where w in (select place.woeid from flickr.places where '+
-                    'lat='+ coords.latitude +' and lon='+ coords.longitude +' and api_key=07518c5da6dcda6f2d8126ca45fbf085)'+
-                    ' and u="c";',
-                    Y.bind(this.onDataReturn,this,callback));
+            Y.YQL(cookedQuery, Y.bind(this.onDataReturn, this, callback));
         },
         onDataReturn: function (cb, result) {
             if (typeof result.error === 'undefined') {
                 var results = result.query.results.rss.channel;
-                cb(null,results);
+                cb(null, results);
             } else {
                 cb(result.error);
             }
@@ -49,4 +54,4 @@ YUI.add('MasterModelWeatherYQL', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['yql']});
+}, '0.0.1', {requires: ['yql', 'substitute']});

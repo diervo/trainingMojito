@@ -32,10 +32,11 @@ YUI.add('Master', function(Y, NAME) {
         index: function(ac) {
 
             //Retrieving GET params
-            var geoParams = ac.params.url();
+            var geoParams = ac.params.url(),
+                yqlModel;
 
             if (geoParams.longitude && geoParams.latitude) {
-                var yqlModel = ac.models.MasterModelWeatherYQL;
+                yqlModel = ac.models.MasterModelWeatherYQL;
 
                 yqlModel.getData(geoParams, function (err, data) {
                     if (err) {
@@ -47,20 +48,7 @@ YUI.add('Master', function(Y, NAME) {
             } else {
                 ac.done({});
             }
-        },
-        getWeatherJSON: function(ac) {
-            ac.models.MasterModelWeatherYQL.getData({geo:'data'}, function (err, data) {
-                if (err) {
-                    ac.error(err);
-                    return;
-                }
-                ac.done(data, 'json');
-            });
-        },
-        getWeather: function () {
-            
         }
-
     };
 
 }, '0.0.1', {requires: ['mojito', 'MasterModelWeatherYQL']});

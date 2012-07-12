@@ -35,7 +35,6 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
          */
         bind: function(node) {
             this.node = node;
-            
             if (this.loaded) {
                 this.temperature = Y.one('#temp');
                 Y.one('.toggle').on('click', Y.bind(this.toggleTemperature, this));
@@ -47,13 +46,15 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
         handleLocation: function (e) {
             e.halt();
             this.getCurrentLocation({
-                context:this,
-                onSuccess: Y.bind(this.onSuccessGetLocation,this)
+                context: this,
+                onSuccess: Y.bind(this.onSuccessGetLocation, this)
             });
+
             e.currentTarget.setContent('Loading...');
         },
 
         toggleTemperature: function (e) {
+            e.halt();
             var value = this.temperature.one('.value'),
                 unit = this.temperature.one('.unit');
 
@@ -67,18 +68,18 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
         },
 
         getCurrentLocation: function (config) {
-            var userSuccess = config.context === 'undefined' ? config.onSuccess : Y.bind(config.onSuccess,config.context),
-                success = Y.bind(userSuccess,this),
-                error =  typeof config.onError === 'function' ? config.onError : function(evt){Y.log(evt);},
-                options = typeof config.options !== 'undefined' ? config.options : {enableHighAccuracy:true};
+            var userSuccess = config.context === 'undefined' ? config.onSuccess : Y.bind(config.onSuccess, config.context),
+                success = Y.bind(userSuccess, this),
+                error =  typeof config.onError === 'function' ? config.onError : function (evt) {Y.log(evt); },
+                options = typeof config.options !== 'undefined' ? config.options : {enableHighAccuracy: true};
 
-                navigator.geolocation.getCurrentPosition(success,error,options);
+            navigator.geolocation.getCurrentPosition(success, error, options);
         },
 
         onSuccessGetLocation: function (geoPosition) {
             var coords = geoPosition.coords;
             this.mojitProxy.refreshView({
-                params:{
+                params: {
                     url: {
                         longitude: coords.longitude,
                         latitude: coords.latitude
@@ -86,10 +87,11 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
                 }
             }, Y.bind(this.afterRefreshView, this));
         },
-
         afterRefreshView: function (node, renderedView) {
-            console.log('View has been refreshed!');
-            console.log(renderedView);
+            Y.log('View has been refreshed!');
+            Y.log(node);
+            Y.log(renderedView);
+            //re-bind the DOM
             this.loaded = true;
             this.bind();
         }
