@@ -28,6 +28,8 @@ To be uploaded.
 Mojito Docs: http://developer.yahoo.com/cocktails/mojito/docs/  
 Mojito Forum: http://developer.yahoo.com/forum/Yahoo-Mojito/  
 YUI Forum: http://yuilibrary.com/forum/  
+Cocktails Introduction: http://developer.yahoo.com/blogs/ydn/posts/2011/11/yahoo-announces-cocktails-%E2%80%93-shaken-not-stirred/  
+
 
 Diego Ferreiro Val <elfogris@gmail.com> @diervo  
 Fabian Frank <fabian.frank.de@gmai.com> @Fabian_Frank 
