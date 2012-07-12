@@ -17,7 +17,7 @@ You can install them using the following command:
     $ cd trainingMojito/myWeather
     $ npm install mojito@0.3.26 -g
     $ mojito test app .
-    $ mojito docs app
+    $ mojito docs app myWeather
     $ mojito start --context "environment:development"
 
 ## Screencast
