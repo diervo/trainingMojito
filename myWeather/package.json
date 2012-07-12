@@ -8,11 +8,13 @@
     "contributors": [
           {
               "name": "Frank the Tank",
-              "email": "frankfa@yahoo-inc.com"
+              "email": "frankfa@yahoo-inc.com",
+              "twitter": "@fabian_frank"
           },
           {
               "name": "Don Diego Cojones",
-              "email": "diegof@yahoo-inc.com"
+              "email": "diegof@yahoo-inc.com",
+              "twitter": "@diervo"
           }
     ],
     "dependencies": {
