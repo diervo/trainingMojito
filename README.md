@@ -25,6 +25,7 @@ Lesson 1:
 To be uploaded.
 
 ## Help
+Mojito Docs: http://developer.yahoo.com/cocktails/mojito/docs/  
 Mojito Forum: http://developer.yahoo.com/forum/Yahoo-Mojito/  
 YUI Forum: http://yuilibrary.com/forum/  
 
