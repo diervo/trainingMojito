@@ -97,19 +97,21 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
             this.bind();
         },
 
-        showTweets: function () {
+        showTweets: function (e) {
+            e.halt();
             var city = Y.one('#placeName').get('text'),
                 params = {
                     url: {
                         query: city
                 }
             };
-
-            this.mojitProxy.invoke('twitter', {params: params}, Y.bind(this.renderTweets, this) );
+            if (!this.twitts) {
+                this.mojitProxy.invoke('twitter', {params: params}, Y.bind(this.renderTweets, this) );
+            }
         },
 
         renderTweets: function (err, data, meta) {
-
+            this.twitts = true;
             this.mojitProxy.render({results: data}, 'twitter', function (err, str) {
                 Y.one('.info').append(str);
             });
