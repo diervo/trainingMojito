@@ -62,18 +62,6 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
                     }
                 }
             });
-            // this.mojitProxy.invoke('getWeatherJSON',{
-            //     params:{
-            //         url: {
-            //             longitude: coords.longitude,
-            //             latitude: coords.latitude
-            //         }
-            //     }
-            // },function (err, data, meta) {
-            //     console.log(arguments);
-            // });
-
-            
         },
         onRefreshView: function (node, renderedView) {
             console.log('View has been refreshed!');
