@@ -30,13 +30,26 @@ YUI.add('Master', function(Y, NAME) {
          */
 
         index: function(ac) {
-            console.log(' ============= BROWSER CONTROLLER ==============');
-            Y.log(ac.context);
-            //ac.assets.addBlob('<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">','top');
+            //adding metatag for iPhone + CSS style
+            ac.assets.addBlob('<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">','top');
             ac.assets.addCss('./index.css');
-            ac.done({
-                status: 'Weather!'
-            });
+
+            //Retrieving GET params
+            var geoParams = ac.params.url();
+
+            if (geoParams.longitude && geoParams.latitude) {
+                var yqlModel = ac.models.MasterModelWeatherYQL;
+
+                yqlModel.getData(geoParams, function (err, data) {
+                    if (err) {
+                        ac.error(err);
+                        return;
+                    }
+                    ac.done(data);
+                });
+            } else {
+                ac.done({});
+            }
         },
         getWeatherJSON: function(ac) {
             ac.models.MasterModelWeatherYQL.getData({geo:'data'}, function (err, data) {

@@ -1,29 +1,19 @@
 html, body{
-    margin:0;
+    background: #1C6AA1;
+    margin:0 auto;
     padding:0;
 }
-.weather{
-       background:url("/static/Master/assets/images/wall.png") #1C6AA1;
-       overflow:hidden;
+a{
+    color:white;
 }
 
 .weather div.portrait{
-    width: 300px;
-    height: 420px;
-    padding:34px;
-
+    margin: 0 auto;
+    padding:15px 30px;
 }
-.weather div.landscape{
-    display:none;
-       width:480px;
-       height:265px;
-}
-
 
 .bubble {
-    color:white;
-    width: 250px;
-    height: 350px;
+    color:white;   
     background-image: -webkit-gradient(
         linear,
         left bottom,
@@ -31,6 +21,7 @@ html, body{
         color-stop(0.49, #1F1F1F),
         color-stop(0.79, #4D4D4D)
     );
+
     background-image: -moz-linear-gradient(
         center bottom,
         #1F1F1F 49%,
@@ -39,9 +30,13 @@ html, body{
     -moz-border-radius: 10px;
     -khtml-border-radius: 10px;
     -webkit-border-radius: 10px;
-    -moz-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
-    -khtml-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);
-    -webkit-box-shadow: 0px 0px 8px rgba(0,0,0,0.3);	
+    border-radius: 10px;
+
+    -moz-box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    -khtml-box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    
     position: relative; 
     z-index: 90; /* the stack order: displayed under ribbon rectangle (100) */
 }
@@ -73,9 +68,10 @@ html, body{
     border-top-left-radius:5px;
     border-top-right-radius:5px;
     height: 60px;
-    width: 280px;
+    width: 100%;
+    padding: 0 12px;
     position: relative;
-    left:-15px;
+    left:-12px;
     float: left;
     -moz-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
     -khtml-box-shadow: 0px 0px 4px rgba(0,0,0,0.55);
@@ -99,11 +95,11 @@ html, body{
 .triangle-l {
 	border-color: transparent #9e5c06 transparent transparent;
 	border-style:solid;
-	border-width:15px;
+	border-width:13px;
 	height:0px;
 	width:0px;
+    left:-26px;
 	position: relative;
-	left: -30px;
 	top: 45px;
 	z-index: -1; /* displayed under bubble */
 }
@@ -111,11 +107,12 @@ html, body{
 .triangle-r {
 	border-color: transparent transparent transparent #9e5c06;
 	border-style:solid;
-	border-width:15px;
-	height:0px;
-	width:0px;
+	border-width:13px;
+    padding: 3px 0;
+	height:0;
+	width:0;
 	position: relative;
-	left: 250px;
+	left: 100%;
 	top: 15px;
 	z-index: -1; /* displayed under bubble */
 }
@@ -127,56 +124,13 @@ html, body{
 }
 .info .image{
     margin:0 auto;
-    border:1px solid white;
+    border: 1px solid white;
     width:120px;
     height:90px;
     overflow: hidden;
-    background: url("/static/Master/assets/images/load.gif");
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .info .image img{
     max-height:128px;
 }
-.info .desc{
-    font-family: Helvetica;
-    font-variant: small-caps;
-}
 
-.info .forecast{
-    margin:15px 0;
-    font-size:16px;
-    line-height:6px;
-    font-variant: small-caps;
-}
-.info .forecast span{
-    font-size:13px;
-}
-
-.weather .landscape .wmodules{
-    margin-top:20px;
-}
-.weather .landscape .wmodules > div{
-    width:30%;
-    margin:10px 6px;
-    height:200px;
-    display:inline-block;
-    background: rgba(255, 255, 255, 0.51);
-    border-radius:8px;
-    -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.3);
-    -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.55);
-}
-.weather .landscape .wmodules .container{
-    margin: 0 auto;
-    display:table;
-    font-family: Trebuchet MS;
-    font-size:15px;
-    line-height:8px;
-    text-align:center;
-}
-
-.weather .landscape .wmodules img{
-    max-width: 45px;
-    max-height: 45px;
-}

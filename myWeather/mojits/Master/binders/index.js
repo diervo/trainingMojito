@@ -34,66 +34,51 @@ YUI.add('MasterBinderIndex', function(Y, NAME) {
          */
         bind: function(node) {
             this.node = node;
+            Y.one('.getLocation').on('click', Y.bind(this.handleLocation, this));
+        },
+        handleLocation: function (e) {
+            e.halt();
             this.getCurrentLocation({
                 context:this,
                 onSuccess: Y.bind(this.onSuccessGetLocation,this)
             });
+            e.currentTarget.setContent('Loading...');
         },
-        getCurrentLocation:function(config){
+        getCurrentLocation: function (config) {
             var userSuccess = config.context === 'undefined' ? config.onSuccess : Y.bind(config.onSuccess,config.context),
                 success = Y.bind(userSuccess,this),
                 error =  typeof config.onError === 'function' ? config.onError : function(evt){Y.log(evt);},
                 options = typeof config.options !== 'undefined' ? config.options : {enableHighAccuracy:true};
+
                 navigator.geolocation.getCurrentPosition(success,error,options);
         },
         onSuccessGetLocation: function (geoPosition) {
-            this.mojitProxy.invoke('getWeatherJSON', Y.bind(this.refreshWeatherView, this));
-        },
-        refreshWeatherView: function (err, weather) {
-            var name = '.weather',
-                placeSel ="#placeName",
-                place = weather.location.city +' ('+weather.location.country+')',
-                tempSel = name + " #temp",
-                temp = weather.item.condition.temp + " ºC",
-                imgSel =name + " .image",
-                img = '<img src="http://l.yimg.com/a/i/us/nws/weather/gr/'+ weather.item.condition.code+'d.png">',
-                descSel = name + " .desc",
-                desc = weather.item.condition.text,
-                forecastSel= name + " .forecast",
-                fNode = weather.item.forecast,
-                forecast = "",i;
-                for (i=0; i < fNode.length ;i++) {
-                    forecast+= "<p>"+ fNode[i].day +': '+ fNode[i].text+ ' <span>(H: '+fNode[i].high+' | L: '+fNode[i].low+')</span></p>';
+            var coords = geoPosition.coords;
+            this.mojitProxy.refreshView({
+                params:{
+                    url: {
+                        longitude: coords.longitude,
+                        latitude: coords.latitude
+                    }
                 }
-            Y.one(placeSel).setContent(place);
-            Y.one(tempSel).setContent(temp);
-            Y.one(imgSel).setContent(img).setStyles({"background":"none"});
-            Y.one(descSel).setContent(desc);
-            Y.one(forecastSel).setContent(forecast);
+            });
+            // this.mojitProxy.invoke('getWeatherJSON',{
+            //     params:{
+            //         url: {
+            //             longitude: coords.longitude,
+            //             latitude: coords.latitude
+            //         }
+            //     }
+            // },function (err, data, meta) {
+            //     console.log(arguments);
+            // });
 
-            //LANDSCAPE
-            var sunrise = weather.astronomy.sunrise,
-                sunset = weather.astronomy.sunset,
-                humidity = weather.atmosphere.humidity,
-                pressure = weather.atmosphere.pressure,
-                visibility = weather.atmosphere.visibility,
-                chill = weather.wind.chill,
-                direction = weather.wind.direction,
-                speed = weather.wind.speed;
-            //astronomy   
-            Y.one("#wSunrise").setContent(sunrise);
-            Y.one("#wSunset").setContent(sunset);
-            //atmosphere
-            Y.one("#wHum").setContent(humidity);
-            Y.one("#wPress").setContent(pressure);
-            Y.one("#wVis").setContent(visibility);
-            //wind
-            Y.one("#wChill").setContent(chill);
-            Y.one("#wDir").setContent(direction);
-            Y.one("#wSpeed").setContent(speed);
-
+            
+        },
+        onRefreshView: function (node, renderedView) {
+            console.log('View has been refreshed!');
+            console.log(renderedView);
         }
-
     };
 
-}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client','node']});
+}, '0.0.1', {requires: ['mojito-client','node']});
