@@ -1,5 +1,6 @@
 [
     {
-        "settings": [ "master" ]
+        "settings": [ "master" ],
+        "twitter": "http://search.twitter.com/search.json?q={query}"
     }
 ]
