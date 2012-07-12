@@ -49,7 +49,6 @@ YUI.add('Master', function(Y, NAME) {
             }
         },
         
-
         /**
          * Method corresponding to the 'twitter' action.
          *
@@ -62,10 +61,6 @@ YUI.add('Master', function(Y, NAME) {
 
             ac.models.MasterModelTwitter.search(query, function (json) {
                 var results = json.results || {};
-
-                Y.log('twitter results retrieved:', 'debug', NAME);
-                Y.log(results, 'debug', NAME);
-
                 ac.done(results, 'json');
             });
 
