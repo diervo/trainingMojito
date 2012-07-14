@@ -19,9 +19,12 @@ You can install them using the following command:
     $ mojito test app .
     $ mojito docs app lesson1
     $ mojito start --context "environment:development"
+    
+You can also take a look at this app running on nodejitsu:
+http://fabianfrank.myweatherapp.jit.su/
 
 ## Screencast
-Lesson 1:  
+Lesson 1: http://www.youtube.com/watch?v=Odn3uXahSfs  
 To be uploaded.
 
 ## Help
