@@ -1,0 +1,42 @@
+<section id="{{mojit_view_id}}" class="weather portrait">
+<div class="portrait">
+<div class="bubble">
+    <div class="place">
+        {{#location}}
+            <h2 id="placeName">{{city}}</h2>
+        {{/location}}
+
+        {{^location}}
+            <h2 id="placeName">
+                <a class="getLocation" href="#getLocation"> Click to get your local Weather, Desktop user!</a>
+            </h2>
+        {{/location}}
+
+    </div>
+
+    {{#item}}
+        {{#condition}}
+            <div class="rectangle">
+                <h2 id="temp">
+                    <span class="value">{{temp}}</span> º<span class="unit">C</span>
+                </h2>
+            </div>
+            <div class="triangle-l"></div>
+            <div class="triangle-r"></div>
+    
+            <div class="info">
+                <div class="image">
+                    <img src="http://l.yimg.com/a/i/us/nws/weather/gr/{{code}}d.png">
+                </div>
+                <div class="desc">{{text}}</div>
+                <div class="forecast">
+                    <p>
+                        <a class="toggle" href="#change">Convert Temperature</a>
+                        <a class="tweets" href="#tweets">Show Tweets</a>
+                    </p>
+                </div>
+            </div>
+        {{/condition}}
+    {{/item}}
+</div>
+</div>

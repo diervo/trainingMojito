@@ -1,0 +1,38 @@
+[
+    {
+        "settings": [ "master" ],
+        "specs": {
+            "master":{
+                "type": "Weather"
+            },
+            "htmlframe": {
+                "type": "HTMLFrameMojit",
+                "config": {
+                    "deploy": true,
+                    "title": "MyWeather - Yahoo!",
+                    "child": {
+                        "base": "master"
+                    },
+                    "assets": {
+                        "top": {
+                            "css": ["/static/Weather/assets/index.css"],
+                            "blob":["<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"]
+                        }
+                    }
+                }
+            }
+        },
+        "staticHandling": {
+            "cache": false,
+            "forceUpdate": true
+        }
+    },
+    {
+        "settings": [ "environment:production" ],
+        "staticHandling": {
+            "cache": true,
+            "forceUpdate": false,
+            "maxAge": 600000
+        }
+    }
+]

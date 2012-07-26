@@ -1,0 +1,16 @@
+[{
+    "settings": [ "master" ],
+
+    "homepage": {
+		"verb": ["get"],
+		"path": "/",
+		"call": "htmlframe.index"
+	},
+
+    "twitter": {
+		"verb": ["get"],
+		"path": "/twitter",
+		"call": "master.twitter"
+	}
+
+}]

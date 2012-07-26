@@ -1,0 +1,30 @@
+{
+  "name": "mojiot-weather-app",
+  "description": "A Mojito application that replaces having a window",
+  "version": "0.1.0",
+  "author": {
+    "name": "Yahoo! Inc"
+  },
+  "contributors": [
+    {
+      "name": "Frank the Tank",
+      "email": "frankfa@yahoo-inc.com",
+      "twitter": "@fabian_frank"
+    },
+    {
+      "name": "Don Diego Cojones",
+      "email": "diegof@yahoo-inc.com",
+      "twitter": "@diervo"
+    }
+  ],
+  "dependencies": {
+    "mojito": "0.3.29",
+    "yui-convert-temperature": "0.1.0"
+  },
+  "engines": {
+    "node": "0.6.x"
+  },
+  "scripts": {
+    "start": "server.js"
+  }
+}

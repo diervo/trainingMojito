@@ -1,0 +1,26 @@
+{
+  "name": "yui-convert-temperature",
+  "description": "YUI module for temperature conversion",
+  "version": "0.1.0",
+  "author": "Fabian Frank <frankfa@yahoo-inc.com>",
+  "homepage": "https://github.com/dferreiroval/trainingMojito/",
+  "keywords": ["yui", "mojito", "conversion", "temperature"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dferreiroval/trainingMojito.git"
+  },
+  "yahoo": {
+    "mojito": {
+      "type": "bundle",
+      "version": "*"
+    }
+  },
+  "dependencies": {
+    "mojito": "~0.3.0"
+  },
+  "engines": {
+    "node": "> 0.4",
+    "npm": "> 1.0"
+  },
+  "license": "MIT"
+}
