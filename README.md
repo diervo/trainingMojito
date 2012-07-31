@@ -35,5 +35,5 @@ Cocktails Introduction: http://developer.yahoo.com/blogs/ydn/posts/2011/11/yahoo
 
 
 Diego Ferreiro Val <elfogris@gmail.com> @diervo  
-Fabian Frank <fabian.frank.de@gmai.com> @Fabian_Frank 
+Fabian Frank <fabian.frank.de@gmail.com> @Fabian_Frank 
 
