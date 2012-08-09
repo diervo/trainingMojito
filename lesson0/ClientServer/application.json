@@ -1,0 +1,26 @@
+[
+    {
+        "settings": [ "master" ],
+        "specs": {
+            "master": {
+                "type": "MarcoPolo"
+            },
+            "htmlframe": {
+                "type": "HTMLFrameMojit",
+                "config": {
+                    "deploy": true,
+                    "title": "Marco Polo Game",
+                    "child": {
+                        "base": "master"
+                    }
+                }
+            }
+        }
+    },
+    {
+        "settings": [ "environment:development" ],
+        "staticHandling": {
+            "forceUpdate": true
+        }
+    }
+]
