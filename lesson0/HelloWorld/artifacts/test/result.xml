@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuites><testsuite name="HelloModelFoo user tests" tests="1" failures="0" time="0.001"><testcase name="test mojit model" time="0"></testcase></testsuite><testsuite name="Hello user tests" tests="1" failures="0" time="0"><testcase name="test mojit" time="0"></testcase></testsuite></testsuites>

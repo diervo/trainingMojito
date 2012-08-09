@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:yui="http://yuilibrary.com/rdf/1.0/yui.rdf#">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<title>API: Hello   controller.server.js  (YUI Library)</title>
+
+	<link rel="stylesheet" type="text/css" href="assets/reset-fonts-grids-min.css?stamp=1344460548.66" />
+	<link rel="stylesheet" type="text/css" href="assets/api.css?stamp=1344460548.66" />
+
+    <script type="text/javascript" src="assets/api-js?stamp=1344460548.66"></script>
+    <script type="text/javascript" src="assets/ac-js?stamp=1344460548.66"></script>
+</head>
+
+<body id="yahoo-com">
+
+<div id="doc3" class="yui-t2">
+	<div id="hd">
+        <h1><a href="http://developer.yahoo.com/yui/" title=".">.</a></h1>
+        <h3>Hello&nbsp; <span class="subtitle">0.1.0</span></h3>
+        <a href="./index.html" title=".">.</a> 
+            &gt; <a href="./module_Hello.html" title="Hello">Hello</a>
+                
+                 &gt; controller.server.js (source view) 
+        <form onsubmit="return false">
+            <div id="propertysearch">
+                Search: <input autocomplete="off" id="searchinput" />
+                <div id="searchresults">
+                    &nbsp;
+                </div>
+            </div>
+        </form>
+	</div>
+
+	<div id="bd">
+		<div id="yui-main">
+			<div class="yui-b">
+            <form action="#" name="yui-classopts-form" method="get" id="yui-classopts-form">
+                <fieldset>
+                    <legend>Filters</legend>
+                <span class="classopts"><input type="checkbox" name="show_private" id="show_private" /> <label for="show_private">Show Private</label></span>
+                <span class="classopts"><input type="checkbox" name="show_protected" id="show_protected" /> <label for="show_protected">Show Protected</label></span>
+                <span class="classopts"><input type="checkbox" name="show_deprecated" id="show_deprecated" /> <label for="show_deprecated">Show Deprecated</label></span>
+                </fieldset>
+            </form>
+
+                    <div id="srcout">
+                        <style>
+                            #doc3 .classopts { display:none; }
+                        </style>
+<div class="highlight"><pre><span class="cm">/*</span>
+<span class="cm"> * Copyright (c) 2012 Yahoo! Inc. All rights reserved.</span>
+<span class="cm"> */</span>
+<span class="cm">/*jslint anon:true, sloppy:true, nomen:true*/</span>
+<span class="nx">YUI</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">Y</span><span class="p">,</span> <span class="nx">NAME</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * The Hello module.</span>
+<span class="cm"> *</span>
+<span class="cm"> * @module Hello</span>
+<span class="cm"> */</span>
+
+    <span class="cm">/**</span>
+<span class="cm">     * Constructor for the Controller class.</span>
+<span class="cm">     *</span>
+<span class="cm">     * @class Controller</span>
+<span class="cm">     * @constructor</span>
+<span class="cm">     */</span>
+    <span class="nx">Y</span><span class="p">.</span><span class="nx">namespace</span><span class="p">(</span><span class="s1">&#39;mojito.controllers&#39;</span><span class="p">)[</span><span class="nx">NAME</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+
+        <span class="nx">init</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">config</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">config</span> <span class="o">=</span> <span class="nx">config</span><span class="p">;</span>
+        <span class="p">},</span>
+
+        <span class="cm">/**</span>
+<span class="cm">         * Method corresponding to the &#39;index&#39; action.</span>
+<span class="cm">         *</span>
+<span class="cm">         * @param ac {Object} The ActionContext that provides access</span>
+<span class="cm">         *        to the Mojito API.</span>
+<span class="cm">         */</span>
+        <span class="nx">index</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">ac</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">ac</span><span class="p">.</span><span class="nx">models</span><span class="p">.</span><span class="nx">HelloModelFoo</span><span class="p">.</span><span class="nx">getData</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">ac</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+                    <span class="k">return</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="nx">ac</span><span class="p">.</span><span class="nx">assets</span><span class="p">.</span><span class="nx">addCss</span><span class="p">(</span><span class="s1">&#39;./index.css&#39;</span><span class="p">);</span>
+                <span class="nx">ac</span><span class="p">.</span><span class="nx">done</span><span class="p">({</span>
+                    <span class="nx">status</span><span class="o">:</span> <span class="s1">&#39;Mojito is working.&#39;</span><span class="p">,</span>
+                    <span class="nx">data</span><span class="o">:</span> <span class="nx">data</span>
+                <span class="p">});</span>
+            <span class="p">});</span>
+        <span class="p">}</span>
+
+    <span class="p">};</span>
+
+<span class="p">},</span> <span class="s1">&#39;0.0.1&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">requires</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;mojito&#39;</span><span class="p">,</span> <span class="s1">&#39;HelloModelFoo&#39;</span><span class="p">]});</span>
+</pre></div>
+                    </div>
+			</div>
+		</div>
+		<div class="yui-b">
+            <div class="nav">
+
+                    <div id="moduleList" class="module">
+                        <h4>Modules</h4>
+                        <ul class="content">
+                                <li class="selected"><a href="module_Hello.html" title="Hello">Hello</a></li>
+                        </ul>
+                    </div>
+
+                    <div id="classList" class="module">
+                        <h4>Classes</h4>
+                        <ul class="content">
+                                <li class=""><a href="Controller.html" title="Controller">Controller</a></li>
+                                <li class=""><a href="HelloModelFoo.html" title="HelloModelFoo">HelloModelFoo</a></li>
+                        </ul>
+                    </div>
+
+                    <!--
+                    <div id="fileList" class="module">
+                        <h4>Files</h4>
+                        <ul class="content">        
+                                <li class="selected"><a href="controller.server.js.html" title="controller.server.js">controller.server.js</a></li>
+                                <li class=""><a href="foo.server.js.html" title="foo.server.js">foo.server.js</a></li>
+                        </ul>
+                    </div>
+                    -->
+
+
+
+
+
+            </div>
+		</div>
+	</div>
+	<div id="ft">
+        <hr />
+        Copyright &copy; 2012 Yahoo! Inc. All rights reserved.
+	</div>
+</div>
+<script type="text/javascript">
+    ALL_YUI_PROPS = [{"url": "HelloModelFoo.html#method_getData", "access": "", "host": "HelloModelFoo", "type": "method", "name": "getData"}, {"url": "Controller.html#method_index", "access": "", "host": "Controller", "type": "method", "name": "index"}];
+</script>
+</body>
+</html>
