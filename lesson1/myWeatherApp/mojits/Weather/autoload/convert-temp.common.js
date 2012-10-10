@@ -25,7 +25,8 @@ YUI.add('convert-temp', function (Y) {
          * @param fahrenheit {Integer}
          */
         toCelsius: function (fahrenheit) {
-            return Math.round((fahrenheit - 32) * (5 / 9));
+            //we introduce a bad conversion so the test will fail on purpose...
+            return Math.round((fahrenheit - 35) * (5 / 9));
         },
 
         /**
@@ -34,7 +35,7 @@ YUI.add('convert-temp', function (Y) {
          * @param celsius {Integer}
          */
         toFahrenheit: function (celsius) {
-            return Math.round(celsius * (9 / 5) + 32);
+            return Math.round(celsius * (9 / 5) + 35);
         }
     };
 
