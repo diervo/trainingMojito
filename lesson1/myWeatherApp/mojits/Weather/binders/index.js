@@ -53,7 +53,6 @@ YUI.add('WeatherBinderIndex', function(Y, NAME) {
 
             e.currentTarget.setContent('Loading...');
         },
-
         toggleTemperature: function (e) {
             e.halt();
             var value = this.temperature.one('.value'),
@@ -86,7 +85,7 @@ YUI.add('WeatherBinderIndex', function(Y, NAME) {
                 }
             }, Y.bind(this.afterRefreshView, this));
         },
-        afterRefreshView: function (node, renderedView) {
+        afterRefreshView: function (node,renderedView) {
             //re-bind the DOM
             this.loaded = true;
             this.bind();
@@ -98,10 +97,10 @@ YUI.add('WeatherBinderIndex', function(Y, NAME) {
                 params = {
                     url: {
                         query: city
-                }
-            };
+                    }
+                };
             if (!this.twitts) {
-                this.mojitProxy.invoke('twitter', {params: params}, Y.bind(this.renderTweets, this) );
+                this.mojitProxy.invoke('twitter', {params: params}, Y.bind(this.renderTweets, this));
             }
         },
 

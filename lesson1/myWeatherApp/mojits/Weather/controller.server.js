@@ -18,7 +18,7 @@ YUI.add('Weather', function(Y, NAME) {
      */
     Y.mojito.controllers[NAME] = {
 
-        init: function(config) {
+        init: function (config) {
             this.config = config;
         },
 
@@ -28,7 +28,7 @@ YUI.add('Weather', function(Y, NAME) {
          * @param ac {Object} The ActionContext that provides access
          *        to the Mojito API.
          */
-        index: function(ac) {
+        index: function (ac) {
 
             //Retrieving GET params
             var geoParams = ac.params.url(),
@@ -54,7 +54,6 @@ YUI.add('Weather', function(Y, NAME) {
                 ac.done({});
             }
         },
-        
         /**
          * Method corresponding to the 'twitter' action.
          *
@@ -68,10 +67,10 @@ YUI.add('Weather', function(Y, NAME) {
 
             twitterModel.search(query, function (json) {
                 var results = json.results || {};
-                ac.done(results, 'json');
+                ac.done(results,'json');
             });
 
         }
     };
 
-}, '0.0.1', {requires: ['mojito','mojito-models-addon','mojito-params-addon', 'WeatherModelYQL', 'WeatherModelTwitter']});
+}, '0.0.1', {requires: ['mojito', 'mojito-models-addon', 'mojito-params-addon', 'WeatherModelYQL', 'WeatherModelTwitter']});
