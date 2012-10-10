@@ -35,7 +35,7 @@ YUI.add('Weather', function(Y, NAME) {
                 yqlModel;
 
             if (geoParams.longitude && geoParams.latitude) {
-                yqlModel = ac.models.WeatherModelYQL;
+                yqlModel = ac.models.get('WeatherModelYQL');
                 //Call YQLModel to retrieve the Weather for that location
                 yqlModel.getData(geoParams, function (err, data) {
                     if (err) {
@@ -64,7 +64,7 @@ YUI.add('Weather', function(Y, NAME) {
 
             var query = ac.params.getFromMerged('query');
 
-            ac.models.WeatherModelTwitter.search(query, function (json) {
+            ac.models.get('WeatherModelTwitter').search(query, function (json) {
                 var results = json.results || {};
                 ac.done(results, 'json');
             });
@@ -72,4 +72,4 @@ YUI.add('Weather', function(Y, NAME) {
         }
     };
 
-}, '0.0.1', {requires: ['mojito', 'WeatherModelYQL', 'WeatherModelTwitter']});
+}, '0.0.1', {requires: ['mojito','mojito-models-addon','mojito-params-addon', 'WeatherModelYQL', 'WeatherModelTwitter']});
