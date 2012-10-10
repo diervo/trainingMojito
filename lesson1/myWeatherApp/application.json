@@ -6,7 +6,7 @@
                 "type": "Weather"
             },
             "htmlframe": {
-                "type": "HTMLFrameMojit",
+                "type": "ShakerHTMLFrameMojit",
                 "config": {
                     "deploy": true,
                     "title": "MyWeather - Yahoo!",
@@ -34,5 +34,10 @@
             "forceUpdate": false,
             "maxAge": 600000
         }
-    }
+    },
+       { "settings": ["environment:stage"],
+        "shaker": {
+            "task": "local"
+        }
+   }
 ]
